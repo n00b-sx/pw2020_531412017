@@ -15,7 +15,7 @@ require 'functions.php';
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container justify-center col-xs-8 mt-5">
     <?php if (isset($_POST['tambah'])) {
       if (tambah($_POST) > 0) {
     ?>
