@@ -37,10 +37,23 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
         ?>
           <tr>
             <td><?= $i++ ?></td>
-            <td><img src="img/<?= $siswa['gambar']; ?>" alt="" width="100px"></td>
+            <td>
+              <a href="detail.php?id=<?= $siswa['id']; ?>">
+                <img src="img/<?= $siswa['gambar']; ?>" alt="" width="100px">
+              </a>
+            </td>
             <td><?= $siswa['nim']; ?></td>
             <td><?= $siswa['nama']; ?></td>
-            <td><a href="detail.php?id=<?= $siswa['id'] ?>">Lebih Detail...</a> | <a href="">Ubah</a> | <a href="">Hapus</a></td>
+            <td>
+              <div class="row">
+                <div class="mr-1">
+                  <a href="ubah.php" class="badge badge-primary">Ubah</a>
+                </div>
+                <div class="col-auto">
+                  <a href="hapus.php" class="badge badge-danger">Hapus</a>
+                </div>
+              </div>
+            </td>
           </tr>
         <?php
         endforeach;

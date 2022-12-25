@@ -60,7 +60,14 @@ require 'functions.php';
         <input type="text" class="form-control" name="gambar" id="gambar" aria-describedby="fotoMahasiswa" placeholder="Masukan Nama Gambar" required>
         <small id="fotoMahasiswa" class="form-text text-muted">Foto Mahasiswa</small>
       </div>
-      <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
+      <div class="row col-xs-4">
+        <div class="col-auto mr-1">
+          <button type="submit" class="btn btn-primary">Tambah</button>
+        </div>
+        <div class="">
+          <a name="kembali" id="kembali" class="btn btn-danger" href="latihan3.php" role="button">Kembali</a>
+        </div>
+      </div>
     </form>
   </div>
 
