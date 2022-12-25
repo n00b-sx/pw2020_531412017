@@ -28,3 +28,25 @@ function query($query)
 
   return $rows;
 }
+
+function tambah($data)
+{
+  //Memanggil fungsi koneksi
+  $conn = koneksi();
+
+  // Memecahkan array $data ke dalam variabel
+  $nama = $data['nama'];
+  $nim = $data['nim'];
+  $email = $data['email'];
+  $jurusan = $data['jurusan'];
+  $gambar = $data['gambar'];
+
+  // Membuat query untuk menyimpan data (insert)
+  $query = "INSERT INTO mahasiswa (nama, nim, email, jurusan, gambar) VALUES ('$nama','$nim','$email','$jurusan','$gambar')";
+  mysqli_query($conn, $query);
+
+  echo mysqli_error($conn);
+  return mysqli_affected_rows($conn);
+}
+
+
