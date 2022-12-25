@@ -35,11 +35,11 @@ function tambah($data)
   $conn = koneksi();
 
   // Memecahkan array $data ke dalam variabel
-  $nama = $data['nama'];
-  $nim = $data['nim'];
-  $email = $data['email'];
-  $jurusan = $data['jurusan'];
-  $gambar = $data['gambar'];
+  $nama = htmlspecialchars($data['nama']);
+  $nim = htmlspecialchars($data['nim']);
+  $email = htmlspecialchars($data['email']);
+  $jurusan = htmlspecialchars($data['jurusan']);
+  $gambar = htmlspecialchars($data['gambar']);
 
   // Membuat query untuk menyimpan data (insert)
   $query = "INSERT INTO mahasiswa (nama, nim, email, jurusan, gambar) VALUES ('$nama','$nim','$email','$jurusan','$gambar')";
@@ -48,5 +48,3 @@ function tambah($data)
   echo mysqli_error($conn);
   return mysqli_affected_rows($conn);
 }
-
-
