@@ -50,7 +50,29 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
                   <a href="ubah.php" class="badge badge-primary">Ubah</a>
                 </div>
                 <div class="col-auto">
-                  <a href="hapus.php" class="badge badge-danger">Hapus</a>
+                  <!-- Button trigger modal -->
+                  <a href="hapus.php" class="badge badge-danger" data-toggle="modal" data-target="#staticBackdrop<?= $siswa['id']; ?>">Hapus</a>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="staticBackdrop<?= $siswa['id']; ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-danger" id="staticBackdropLabel"><i class="fas fa-wind-warning    "></i> Peringatan</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Apakah anda yakin ingin menghapus data dari <?= $siswa['nama']; ?> ?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <a href="hapus.php?id=<?= $siswa['id']; ?>" type="button" class="btn btn-danger">Ya</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </td>
